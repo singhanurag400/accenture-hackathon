@@ -1,0 +1,125 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "title": "product1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
+      "availability": "In Stock",
+      "users": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 0,
+          "quantity": 1
+        }
+      ],
+      "addedToCart": true,
+      "category": "fashion",
+      "imageSrc": [
+        "../assets/images/product_2.jpg",
+        "../assets/images/product_3.jpg",
+        "../assets/images/product_4.jpg",
+        "../assets/images/product_1.jpg"
+      ],
+      "rating": 4,
+      "price": 33
+    },
+    {
+      "id": 2,
+      "title": "product2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
+      "availability": "In Stock",
+      "users": [
+        {
+          "id": 1,
+          "quantity": 4
+        }
+      ],
+      "addedToCart": false,
+      "category": "fashion",
+      "imageSrc": [
+        "../assets/images/product_2.jpg",
+        "../assets/images/product_3.jpg",
+        "../assets/images/product_4.jpg",
+        "../assets/images/product_1.jpg"
+      ],
+      "rating": 4,
+      "price": 35
+    },
+    {
+      "id": 3,
+      "title": "product3",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
+      "availability": "In Stock",
+      "users": [],
+      "addedToCart": true,
+      "category": "fashion",
+      "imageSrc": [
+        "../assets/images/product_2.jpg",
+        "../assets/images/product_3.jpg",
+        "../assets/images/product_4.jpg",
+        "../assets/images/product_1.jpg"
+      ],
+      "rating": 4,
+      "price": 35
+    },
+    {
+      "id": 4,
+      "title": "product4",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
+      "availability": "In Stock",
+      "users": [],
+      "addedToCart": false,
+      "category": "fashion",
+      "imageSrc": [
+        "../assets/images/product_2.jpg",
+        "../assets/images/product_3.jpg",
+        "../assets/images/product_4.jpg",
+        "../assets/images/product_1.jpg"
+      ],
+      "rating": 4,
+      "price": 35
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "singhanurag@gmail.com",
+      "name": "anurag",
+      "password": "anurag12"
+    },
+    {
+      "id": 2,
+      "email": "anamika@gmail.com",
+      "name": "anamika",
+      "password": "anamika12"
+    },
+    {
+      "name": "anurag",
+      "email": "shuh@ghdd.vom",
+      "password": "aaaaaaaa",
+      "id": 3
+    },
+    {
+      "name": "anurag",
+      "email": "singhanurag400@gmail.com",
+      "password": "aaaaaaaa",
+      "id": 4
+    },
+    {
+      "name": "data",
+      "email": "test@test.com",
+      "password": "qqqqqqqq",
+      "id": 5
+    }
+  ]
+}

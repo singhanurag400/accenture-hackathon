@@ -1,0 +1,121 @@
+<div class="login-wrapper">
+    <div class="container-common">
+        <div class="row justify-content-center">
+            <div class="col-md-6 ">
+                <form class="login_box_outer" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+                    <div class="login-logo1 text-center mb30">
+                        <!-- <img src=".././assets/img/logo-blue.png" alt="logo" /> -->
+                    </div>
+                    <div class="login-box max-WT-520">
+                        <div class="login-right-block">
+                            <div class="login-heading">
+                                <h4>Login</h4>
+                            </div>
+  
+                            <div class="login-box-body">
+                                <div class="form-group">
+                                    <label class="common-label blue">
+                                        Enter email
+                                        <span class="require">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="Email Address" [formControl]="loginForm.controls['email']" maxlength="50"
+                                         />
+  
+                                    <div class="error-block" *ngIf="loginForm.controls['email'].dirty && loginForm.controls['email'].invalid">
+  
+  
+                                        <span style='color:red' [ngClass]="{error:loginForm.controls['email'].hasError('required')}" *ngIf="loginForm.controls['email'].hasError('required')">*Please enter an email.</span>
+                                        <span style='color:red' [ngClass]="{error: loginForm.controls['email'].hasError('pattern')}" *ngIf="loginForm.controls['email'].hasError('pattern')">*Please enter a valid email address</span>
+                                        <span style='color:red' [ngClass]="{error: loginForm.controls['email'].hasError('maxlength') && loginForm.controls['email'].dirty}"
+                                            *ngIf="loginForm.controls['email'].hasError('maxlength') && ! loginForm.controls['email'].hasError('pattern')">*Please enter a valid email address</span>
+  
+  
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="common-label blue">Password</label>
+                                        <input type="password" class="form-control " [formControl]='loginForm.controls["password"]' maxlength="16" placeholder="Password" />
+                                       
+                                       <div class="error-block" *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].invalid">
+  
+                                            <span style='color:red' [ngClass]="{error:loginForm.controls['password'].hasError('required')}" *ngIf="loginForm.controls['password'].hasError('required')">*Please enter Password.</span>
+                                            <span style='color:red' [ngClass]="{error:loginForm.controls['password'].hasError('minlength')}" *ngIf="loginForm.controls['password'].hasError('minlength')">*Password must be between 8 to 16 characters</span>
+  
+                                            <span style='color:red' [ngClass]="{error:loginForm.controls['password'].hasError('maxlength')}" *ngIf="loginForm.controls['password'].hasError('maxlength')">*Password must be between 8 to 16 characters</span>
+  
+                                               <span  style='color:red' [ngClass]="{error:loginForm.controls['password'].hasError('pattern')}" *ngIf="loginForm.controls['password'].hasError('pattern')">*Please enter valid password.</span>
+                                       </div>
+                                       
+                                        <!-- <label class="error">Please enter a valid password.</label> -->
+                                    </div>
+                                    <!-- <div class="d-flex">
+                                        <label class="checkbox-design">
+                                            <input type="checkbox" />
+                                            <span></span>Remember me
+                                        </label>
+                                        <a class="forget-pass ml-auto">Forgot Password?</a>
+                                    </div> -->
+                                    <div class="text-center mt20">
+                                        <button type="submit" class="btn btn-login btn-large width100" [disabled]="loginForm.invalid">Login</button>
+                                        <div class="d-flex">
+                                              <a class="forget-pass ml-auto" routerLink="/">Forgot Password?</a>
+  
+                                        </div>
+                                        <!-- <a class="btn btn-login btn-large" routerLink="/dashboard">LOGIN</a> -->
+                                    </div>
+                                </div>
+                            </div>
+  
+                        </div>
+                    </div>
+  
+                </form>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <!-- <div class="login-wrapper">
+  <div class="container-common">
+     <div class="row justify-content-center">
+        <div class="col-md-6 ">
+           <form class="login_box_outer" >
+              <div class="login-logo1 text-center mb30">
+                 <img src="../assets/img/logo-blue.png" alt="logo" />
+              </div>
+              <div class="login-box max-WT-520">
+                 <div class="login-right-block">
+                    <div class="login-heading">
+                       <h4>Login</h4>
+                    </div>
+                    <div class="login-box-body">
+                         <div class="form-group">
+                             <label class="common-label blue">Enter email</label>
+                             <input type="email"formControlName="email" class="form-control" placeholder="Email email" />
+                             
+                         </div>
+                         <div class="form-group">
+                             <label class="common-label blue">Password</label>
+                             <input type="password"  formControlName="password"  class="form-control " placeholder="Password" />
+                             
+                         </div>
+                         <div class="d-flex">
+                             <label class="checkbox-design">
+                                 <input type="checkbox"/><span></span>Remember me
+                             </label>
+                             <a routerLink="/forgotpassword" class="forget-pass ml-auto">Forgot Password?</a>
+                         </div>
+                         <div class="text-center mt20">
+                           <a routerLink="/dashboard" class="btn btn-login btn-large">LOGIN</a>
+                         </div>
+                    </div>
+                 </div>
+              </div>
+           </form>
+        </div>
+     </div>
+  </div>
+  </div> -->

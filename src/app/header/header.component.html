@@ -1,0 +1,46 @@
+
+
+    <div class="w3-bar w3-white w3-card w3-right" id="myNavbar">
+            <div class="w3-right">
+                <a routerLink='/register'>{{isLoggedIn}}</a>&nbsp;&nbsp;&nbsp;
+                <a routerLink='/register'>MY ACCOUNT</a>&nbsp;&nbsp;&nbsp;
+            </div>
+        
+    </div>   
+
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a routerLink='/homepage' class="w3-bar-item w3-button"><img class="responsive-logo" src="../../assets/logo.png"></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user nav-button"></i></a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-shopping-cart nav-button" ></i></a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" (click)="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" (click)="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" (click)="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" (click)="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" (click)="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" (click)="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" (click)="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="w3-display-container w3-grayscale-min" id="home" >
+    <img src="../../assets/Banner/banner-bg.png" class="w3-display-container w3-grayscale-min responsive-logo" id="home"/>
+  <div class="w3-display-middle w3-text-white" style="padding:48px">
+    <span class="w3-xxlarge w3-hide-small">Fashion For Upcoming Winter</span><br>
+    <!-- <span class="w3-xxlarge w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span> -->
+   
+  </div> 
+  
+</header>

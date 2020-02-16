@@ -1,0 +1,242 @@
+
+<div class="super_container">
+<div class="super_container_inner">
+<div class="super_overlay"></div>
+
+<div class="home">
+<div class="home_container d-flex flex-column align-items-center justify-content-end">
+<div class="home_content text-center"> 
+<div class="home_title">Shopping Cart</div>
+<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
+<ul class="d-flex flex-row align-items-start justify-content-start text-center">
+<li><a href="#">Home</a></li>
+<li>Your Cart</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cart_section" *ngIf="cartProducts!=0">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="cart_container">
+
+<div class="cart_bar">
+<ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-end">
+<li class="mr-auto">Product</li>
+
+<li>Price</li>
+<li>Quantity</li>
+<li>Total</li>
+<li>Remove</li>
+</ul>
+</div>
+
+<div class="cart_items">
+<ul class="cart_items_list">
+<li *ngFor='let product of cartProducts ;let i= index;' class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-end justify-content-start">
+<div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start mr-auto">
+<div><div class="product_number">{{i+1}}</div></div>
+<div><div class="product_image"><img [src]="product.imageSrc[0]" alt=""></div></div>
+<div class="product_name_container">
+<div class="product_name"><a [routerLink]="['/product',product.id]">{{product?.title}}</a></div>
+
+</div>
+</div>
+
+<div class="product_price product_text"><span>Price: </span>${{product?.price}}</div>
+<div class="product_quantity_container">
+
+<span class="product_text product-quantity">{{product?.quantity}}</span>
+
+</div>
+<div class="product_total product_text"><span>Total: </span>${{product?.quantity*product?.price}}</div>
+<div ><span title="Remove from cart"class="glyphicon glyphicon-trash" (click)="removeFromCart(product?.id)"></span></div>
+</li>
+</ul>
+</div>
+
+
+<div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+<div class="cart_buttons_inner ml-sm-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+<div class="button button_continue trans_200"><a routerLink="/homepage">continue shopping</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row cart_extra_row">
+<div class="col-lg-6">
+<div class="cart_extra cart_extra_1">
+<div class="cart_extra_content cart_extra_coupon">
+<div class="cart_extra_title">Coupon code</div>
+<div class="coupon_form_container">
+
+<input type="text" class="coupon_input" required="required" [(ngModel)]="coupon">
+<button class="coupon_button" (click)="applyCoupon()">apply</button>
+
+
+</div>
+<span style='color:red' [ngClass]="{error:'couponError'}" *ngIf="couponError">*Invalid Coupon Code.</span>
+<div class="coupon_text">**USE Coupon : ANRG to get extra 10% off. </div>
+<div class="shipping">
+<div class="cart_extra_title">Shipping Method</div>
+<ul>
+<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+<label class="radio_container">
+<input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
+<span class="radio_mark"></span>
+<span class="radio_text" (click)='getPrice(4.99)'>Next day delivery</span>
+</label>
+<div class="shipping_price ml-auto">$4.99</div>
+</li>
+<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+<label class="radio_container">
+<input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
+<span class="radio_mark"></span>
+<span class="radio_text" (click)='getPrice(1.99)'>Standard delivery</span>
+</label>
+<div class="shipping_price ml-auto">$1.99</div>
+</li>
+<li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+<label class="radio_container">
+<input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
+<span class="radio_mark"></span>
+<span class="radio_text" (click)='getPrice(0)'>Personal Pickup</span>
+</label>
+<div class="shipping_price ml-auto">Free</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 cart_extra_col">
+<div class="cart_extra cart_extra_2">
+<div class="cart_extra_content cart_extra_total">
+<div class="cart_extra_title">Cart Total</div>
+<ul class="cart_extra_total_list">
+<li class="d-flex flex-row align-items-center justify-content-start">
+<div class="cart_extra_total_title">Subtotal</div>
+<div class="cart_extra_total_value ml-auto">${{totalCartAmount}}</div>
+</li>
+<li class="d-flex flex-row align-items-center justify-content-start">
+<div class="cart_extra_total_title">Shipping</div>
+<div class="cart_extra_total_value ml-auto" >{{previousAmount==0?'Free':previousAmount}}</div>
+</li>
+<li *ngIf="appliedCoupon" class="d-flex flex-row align-items-center justify-content-start">
+    <div class="cart_extra_total_title">Coupon Applied</div>
+    <div style='color:green' class="cart_extra_total_value ml-auto" >-10%</div>
+    </li>
+<li class="d-flex flex-row align-items-center justify-content-start">
+<div class="cart_extra_total_title">Total</div>
+<div class="cart_extra_total_value ml-auto">${{totalCartAmount}}</div>
+</li>
+</ul>
+<div class="checkout_button trans_200"><a href="checkout.html">proceed to checkout</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="cart_section align-items-center" *ngIf="cartProducts==0">
+    <h2 class="align-items-lg-center">**No Products In Your Cart</h2>
+    <div class="btn btn-primary con-button con-button_continue"><a routerLink="/homepage">continue shopping</a></div>
+</div>
+
+<footer class="footer">
+<div class="footer_content">
+<div class="container">
+<div class="row">
+
+<div class="col-lg-4 footer_col">
+<div class="footer_about">
+<div class="footer_logo">
+<a href="#">
+<div class="d-flex flex-row align-items-center justify-content-start">
+<div class="footer_logo_icon"><img src="../assets/images/logo_2.png" alt=""></div>
+<div>Little Closet</div>
+</div>
+</a>
+</div>
+<div class="footer_about_text">
+<p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4 footer_col">
+<div class="footer_menu">
+<div class="footer_title">Support</div>
+<ul class="footer_list">
+<li>
+<a href="#"><div>Customer Service<div class="footer_tag_1">online now</div></div></a>
+</li>
+<li>
+<a href="#"><div>Return Policy</div></a>
+</li>
+<li>
+<a href="#"><div>Size Guide<div class="footer_tag_2">recommended</div></div></a>
+</li>
+<li>
+<a href="#"><div>Terms and Conditions</div></a>
+</li>
+<li>
+<a href="#"><div>Contact</div></a>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-lg-4 footer_col">
+<div class="footer_contact">
+<div class="footer_title">Stay in Touch</div>
+<div class="newsletter">
+<form action="#" id="newsletter_form" class="newsletter_form">
+<input type="email" class="newsletter_input" placeholder="Subscribe to our Newsletter" required="required">
+<button class="newsletter_button">+</button>
+</form>
+</div>
+<div class="footer_social">
+<div class="footer_title">Social</div>
+<ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
+<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer_bar">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
+<div class="copyright order-md-1 order-2">
+Copyright &copy;<script type="56b0252d048d210c671fe23e-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+</div>
+<nav class="footer_nav ml-md-auto order-md-2 order-1">
+<ul class="d-flex flex-row align-items-center justify-content-start">
+<li><a href="category.html">Women</a></li>
+<li><a href="category.html">Men</a></li>
+<li><a href="category.html">Kids</a></li>
+<li><a href="category.html">Home Deco</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
