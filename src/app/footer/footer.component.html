@@ -1,54 +1,100 @@
 <div class="footer_content">
-    <div class="container">
     <div class="row">
-    <div class="col-lg-4 footer_col">
-    <div class="footer_about">
-    <div class="footer_logo"><a href="#">
-    <div class="d-flex flex-row align-items-center justify-content-start">
-    <div class="footer_logo_icon"><img src="../assets/images/logo_2.png" alt=""></div>
-    <div>Little Closet</div>
+        <div class="center w3-large">
+            <p class="w3-xxlarge font-color">Subscribe for our newsletter</p>
+            <p class="w3-large">We won't send any kind of spam</p>
+            <p></p>
+            <form class="login_box_outer" [formGroup]="loginForm" (ngSubmit)="getStarted(loginForm.value)" novalidate>
+                <div class="form-group">
+                    <input type="text" class="news-width" placeholder="Email Address"
+                        [formControl]="loginForm.controls['email']" maxlength="50" />
+                        <button type="submit" class="btn btn-primary btn-large width100" [disabled]="loginForm.invalid">Get Started</button>
+
+                    <div class="error-block"
+                        *ngIf="loginForm.controls['email'].dirty && loginForm.controls['email'].invalid">
+                        <span class="span-red" [ngClass]="{error: loginForm.controls['email'].hasError('pattern')}"
+                            *ngIf="loginForm.controls['email'].hasError('pattern')">*Please enter a valid email
+                            address</span>
+                        <span class="span-red"
+                            [ngClass]="{error: loginForm.controls['email'].hasError('maxlength')}"
+                            *ngIf="loginForm.controls['email'].hasError('maxlength') && ! loginForm.controls['email'].hasError('pattern')">*Please
+                            enter a valid email address</span>
+
+
+                    </div>
+                    
+
+                </div>
+            </form>
+        </div>
     </div>
-    </a></div>
-    <div class="footer_about_text">
-    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3 footer_col">
+                <div class="footer_about">
+                    
+                            <div class="d-flex flex-row align-items-center justify-content-start">
+                               
+                                <div class="font-color">About Us</div>
+                            </div>
+                       
+                    <div class="footer_about_text">
+                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                            Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 footer_col">
+                    <div class="footer_about">
+                        
+                                <div class="d-flex flex-row align-items-center justify-content-start">
+                                   
+                                    <div class="font-color">Newsletter</div>
+                                </div>
+                           
+                        <div class="footer_about_text">
+                            <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 footer_col">
+                        <div class="footer_about">
+                            
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                       
+                                        <div class="font-color">Instagram Feed</div>
+                                    </div>
+                               
+                            <div class="footer_about_text">
+                                <p><img style="width: 25%" src="../../assets/images/1.png">
+                                <img style="width: 25%" src="../../assets/images/2.png">
+                                <img style="width: 25%" src="../../assets/images/3.png">
+                                <img style="width: 25%" src="../../assets/images/4.png"></p>
+                                <p><img style="width: 25%" src="../../assets/images/5.png">
+                                    <img style="width: 25%" src="../../assets/images/6.png">
+                                    <img style="width: 25%" src="../../assets/images/7.png">
+                                    <img style="width: 25%" src="../../assets/images/8.png"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 footer_col">
+                            <div class="footer_about">
+                                
+                                        <div class="d-flex flex-row align-items-center justify-content-start">
+                                           
+                                            <div class="font-color">Follow Us</div>
+                                        </div>
+                                   
+                                <div class="footer_about_text">
+                                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                        Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+                                </div>
+                            </div>
+                        </div>
+           
+          
+        </div>
     </div>
-    </div>
-    </div>
-    <div class="col-lg-4 footer_col">
-    <div class="footer_menu">
-    <div class="footer_title">Support</div>
-    <ul class="footer_list">
-    <li><a href="#">
-    <div>Customer Service
-    <div class="footer_tag_1">online now</div>
-    </div>
-    </a></li><li><a href="#">
-    <div>Return Policy</div>
-    </a></li><li><a href="#">
-    <div>Size Guide
-    <div class="footer_tag_2">recommended</div>
-    </div>
-    </a></li><li><a href="#">
-    <div>Terms and Conditions</div>
-    </a></li><li><a href="#">
-    <div>Contact</div>
-    </a></li></ul>
-    </div>
-    </div>
-    <div class="col-lg-4 footer_col">
-    <div class="footer_contact">
-    <div class="footer_title">Stay in Touch</div>
-    <div class="newsletter">
-    <form action="#" id="newsletter_form" class="newsletter_form"><input type="email" class="newsletter_input">
-    <button class="newsletter_button">&#43;</button> </form>
-    </div>
-    <div class="footer_social">
-    <div class="footer_title">Social</div>
-    <ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
-    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li><li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>

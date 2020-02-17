@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +37,13 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({ timeOut:1000}),
     HttpClientModule,
     FormsModule,
     NgxSpinnerModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [AppService,HomePageComponent],
   bootstrap: [AppComponent]

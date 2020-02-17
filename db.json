@@ -5,13 +5,15 @@
       "title": "product1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
       "availability": "In Stock",
+      "wishlistedUsers": [
+        {
+          "id": 4,
+          "isWishlist": true
+        }
+      ],
       "users": [
         {
           "id": 2,
-          "quantity": 1
-        },
-        {
-          "id": 0,
           "quantity": 1
         }
       ],
@@ -31,10 +33,20 @@
       "title": "product2",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
       "availability": "In Stock",
+      "wishlistedUsers": [
+        {
+          "id": 7,
+          "isWishlist": true
+        }
+      ],
       "users": [
         {
           "id": 1,
           "quantity": 4
+        },
+        {
+          "id": 0,
+          "quantity": 1
         }
       ],
       "addedToCart": false,
@@ -53,7 +65,18 @@
       "title": "product3",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
       "availability": "In Stock",
-      "users": [],
+      "wishlistedUsers": [
+        {
+          "id": 2,
+          "isWishlist": true
+        }
+      ],
+      "users": [
+        {
+          "id": 6,
+          "quantity": 1
+        }
+      ],
       "addedToCart": true,
       "category": "fashion",
       "imageSrc": [
@@ -70,6 +93,12 @@
       "title": "product4",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.",
       "availability": "In Stock",
+      "wishlistedUsers": [
+        {
+          "id": 7,
+          "isWishlist": true
+        }
+      ],
       "users": [],
       "addedToCart": false,
       "category": "fashion",
@@ -120,6 +149,12 @@
       "email": "test@test.com",
       "password": "qqqqqqqq",
       "id": 5
+    },
+    {
+      "name": "anurag",
+      "email": "singh400@gmail.com",
+      "password": "123456789",
+      "id": 6
     }
   ]
 }

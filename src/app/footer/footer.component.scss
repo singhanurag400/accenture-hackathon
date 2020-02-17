@@ -1,0 +1,20 @@
+$red-co:red;
+$black-co:black;
+.center {
+    padding: 90px 0;
+    text-align: center;
+    background-color:rgb(226, 242, 243);
+    width:100% !important
+
+  }
+
+  .font-color{
+      color:$black-co;
+      font-weight:bold
+  }
+  .news-width{
+      width: 30%;
+  }
+  .span-red{
+      color:$red-co 
+  }

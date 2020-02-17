@@ -1,3 +1,4 @@
+$red-co:red;
 .zoom {
     // padding: 50px;
     // background-color: green;
@@ -7,7 +8,7 @@
     // margin: 0 auto;
   }
     .middle {
-    transition: .5s ease;
+    // transition: .5s ease;
     opacity: 0;
     position: absolute;
     top: 80%;
@@ -26,7 +27,7 @@
     opacity: 1;
 }
 .cart-pos{
-    transition: .5s ease;
+    // transition: .5s ease;
     opacity: 0;
     position: absolute;
     top: 80%;
@@ -38,11 +39,11 @@
 }
 .heart {
     font-size: 19px;
-      color:red;
+      color:$red-co;
   }
 
   .green {
-    background-color:red;
+    background-color:$red-co;
    }
 
    .blank{
