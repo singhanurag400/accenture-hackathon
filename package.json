@@ -21,7 +21,7 @@
     "@angular/pwa": "^0.900.2",
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-spinner": "^8.1.0",
     "ngx-toastr": "^11.3.2",
     "rxjs": "~6.4.0",
